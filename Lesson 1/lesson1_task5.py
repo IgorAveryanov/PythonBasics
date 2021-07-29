@@ -9,15 +9,14 @@
 
 revenue = int(input('Введите выручку: '))
 costs = int(input('Введите издержки: '))
-employees = int(input('Введите количество сотрудников: '))
 
 if revenue - costs > 0:
     print(f'\nПрибыль составит {revenue - costs} рублей')
     rate_of_return = ((revenue - costs) / revenue) * 100
     print(f'Рентабельность составит {rate_of_return:.1f} процентов')
+    employees = int(input('Введите количество сотрудников: '))
     print(f'Прибыль в расчете на одного сотрудника: {(revenue - costs) / employees:.2f} рублей')
 elif revenue - costs < 0:
     print(f'Убыток составит {costs - revenue} рублей')
-    print(f'Убыток в расчете на одного сотрудника: {(revenue - costs) / employees:.2f} рублей')
 else:
     print(f'Прибыли нет. Как, впрочем, и убытка')
