@@ -14,6 +14,7 @@ class Car:
         self.color = color
         self.name = name
         self.is_police = is_police
+        print(f'{self.speed}, {self.color}, {self.name}, {self.is_police}')
 
     def go(self):
         print(f'{self.name} is moving!')
@@ -35,8 +36,6 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        Car.__init__(self, speed, color, name, is_police)
 
     def show_speed(self):
         if self.speed <= 60:
@@ -46,13 +45,10 @@ class TownCar(Car):
 
 
 class SportCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        Car.__init__(self, speed, color, name, is_police)
+    pass
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        Car.__init__(self, speed, color, name, is_police)
 
     def show_speed(self):
         if self.speed <= 40:
@@ -62,62 +58,45 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        Car.__init__(self, speed, color, name, is_police)
+    pass
 
 
 # TownCar class object example       
 BMW = TownCar(70, 'black', 'X5', False)
 print(BMW.__class__.__name__)
-print(f'Speed: {BMW.speed}')
-print(f'Color: {BMW.color}')
-print(f'Model: {BMW.name}')
-print(f'Police?: {BMW.is_police}')
 BMW.go()
 BMW.stop()
 BMW.turn('right')
 BMW.show_speed()
 BMW.is_police_check()
 
-print('\n')
+print()
 
 # SportCar class object example 
 Ferrari = SportCar(120, 'red', 'F40', False)
 print(Ferrari.__class__.__name__)
-print(f'Speed: {Ferrari.speed}')
-print(f'Color: {Ferrari.color}')
-print(f'Model: {Ferrari.name}')
-print(f'Police?: {Ferrari.is_police}')
 Ferrari.go()
 Ferrari.stop()
 Ferrari.turn('upside-down')
 Ferrari.show_speed()
 Ferrari.is_police_check()
 
-print('\n')
+print()
 
 # WorkCar class object example
 Skoda = WorkCar(41, 'green', 'Fabia', False)
 print(Skoda.__class__.__name__)
-print(f'Speed: {Skoda.speed}')
-print(f'Color: {Skoda.color}')
-print(f'Model: {Skoda.name}')
-print(f'Police?: {Skoda.is_police}')
 Skoda.go()
 Skoda.stop()
 Skoda.turn('left')
 Skoda.show_speed()
 Skoda.is_police_check()
 
-print('\n')
+print()
 
 # PoliceCar class object example
 Chevrolet = PoliceCar(80, 'white', 'Camaro', True)
 print(Chevrolet.__class__.__name__)
-print(f'Speed: {Chevrolet.speed}')
-print(f'Color: {Chevrolet.color}')
-print(f'Model: {Chevrolet.name}')
-print(f'Police?: {Chevrolet.is_police}')
 Chevrolet.go()
 Chevrolet.stop()
 Chevrolet.turn('backward')

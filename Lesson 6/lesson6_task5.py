@@ -15,24 +15,18 @@ class Stationery:
 
 
 class Pen(Stationery):
-    def __init__(self, title):
-        Stationery.__init__(self, title)
 
     def draw(self):
         print(f'Рисуем ручкой\n')
 
 
 class Pencil(Stationery):
-    def __init__(self, title):
-        Stationery.__init__(self, title)
 
     def draw(self):
         print(f'Рисуем карандашом\n')
 
 
 class Handle(Stationery):
-    def __init__(self, title):
-        Stationery.__init__(self, title)
 
     def draw(self):
         print(f'Рисуем маркером\n')

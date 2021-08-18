@@ -14,11 +14,10 @@ class Worker:
         self.surname = surname
         self.position = position
         self._income = income
+        print(f'{self.name} {self.surname}, {self.position}, {self._income}')
 
 
 class Position(Worker):
-    def __init__(self, name, surname, position, income):
-        Worker.__init__(self, name, surname, position, income)
 
     def get_full_name(self):
         print(f'Full name: {self.name} {self.surname}')
@@ -27,22 +26,12 @@ class Position(Worker):
         print(f'Total Income: {sum(self._income.values())}')
 
 
-chef = Position('Ivan', 'Ivanov', 'Chef', {'wage': 1000, 'bonus': 500})
-print(chef.name)
-print(chef.surname)
-print(chef.position)
-print(chef._income)
-
+chef = Position('Ivan', 'Ivanov', 'chef', {'wage': 1000, 'bonus': 500})
 chef.get_full_name()
 chef.get_total_income()
 
-print('\n')
+print()
 
-scientist = Position('Pyotr', 'Petrov', 'Scientist', {'wage': 3000, 'bonus': 1000})
-print(scientist.name)
-print(scientist.surname)
-print(scientist.position)
-print(scientist._income)
-
+scientist = Position('Pyotr', 'Petrov', 'scientist', {'wage': 3000, 'bonus': 1000})
 scientist.get_full_name()
 scientist.get_total_income()
