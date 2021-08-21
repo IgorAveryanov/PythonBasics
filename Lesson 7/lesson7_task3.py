@@ -28,19 +28,23 @@ class Cell:
         self.box_number = box_number
 
     def __add__(self, other):
-        return f'Addition:  Result cell has {self.box_number + other.box_number} boxes'
+        self.cell_name = 'Addition: Result cell has'
+        return Cell(self.cell_name, self.box_number + other.box_number)
 
     def __sub__(self, other):
+        self.cell_name = 'Subtraction: Result cell has'
         if self.box_number > other.box_number:
-            return f'Subtraction:  Result cell has {self.box_number - other.box_number} boxes'
+            return Cell(self.cell_name, self.box_number - other.box_number)
         else:
-            return f'Subtraction:  {self.cell_name} has fewer boxes than {other.cell_name}. Result is negative'
+            return f'Subtraction: cell_1 has fewer boxes than cell_2. Result is negative'
 
     def __mul__(self, other):
-        return f'Multiplication:  Result cell has {self.box_number * other.box_number} boxes'
+        self.cell_name = 'Multiplication: Result cell has'
+        return Cell(self.cell_name, self.box_number * other.box_number)
 
     def __floordiv__(self, other):
-        return f'Floor Division:  Result cell has {self.box_number // other.box_number} boxes'
+        self.cell_name = 'Floor Division: Result cell has'
+        return Cell(self.cell_name, self.box_number // other.box_number)
 
     def make_order(self, boxes_in_row):
         self.boxes_in_row = boxes_in_row
